@@ -11,7 +11,7 @@
 #5. 需要pip3安装mod_wsgi及手动创建conf加载
 #6. Zmirror的新加站点Apache站点配置，必须修改www-data为apache，还要修改变量APACHE_LOG_DIR为常量"/var/log/httpd24"
 #7. 手动添加了一个port.conf
-#
+#8. 尝试修改为CentOS7可以用的
 #
 #
 #############################################
@@ -106,7 +106,7 @@ yum install -y epel-release
 type pip3 >/dev/null 2>&1
 if [ $? -ne 0 ]; then
 	echo "pip3 is not installed, start to install python3 and pip3"
-	rpm -Uvh https://centos6.iuscommunity.org/ius-release.rpm
+	rpm -Uvh https://centos7.iuscommunity.org/ius-release.rpm
 	yum install -y python35u python35u-devel wget git curl openssl
 	yum groupinstall "Development tools" -y
 	wget --no-check-certificate https://bootstrap.pypa.io/get-pip.py -O - | python3.5
